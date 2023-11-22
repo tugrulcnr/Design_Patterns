@@ -1,20 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        WeatherStation weatherStation = new WeatherStation();
+        WeatherData weatherData = new WeatherData();
 
-        Observer observer1 = new WeatherObserver("Gözlemci 1");
-        Observer observer2 = new WeatherObserver("Gözlemci 2");
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay();
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+        ForecastDisplay forecastDisplay = new ForecastDisplay();
 
-        weatherStation.registerObserver(observer1);        
-        weatherStation.registerObserver(observer2);
+        weatherData.registerObserver(currentConditionsDisplay);
+        weatherData.registerObserver(statisticsDisplay);
+        weatherData.registerObserver(forecastDisplay);
 
-        weatherStation.setTemperature(30);
-        weatherStation.setTemperature(22);
-
-        weatherStation.removeObserver(observer1);
-
-        weatherStation.setTemperature(28);
-        
+        // Simulate weather changes
+        weatherData.setMeasurements(75, 65, 30.4f);
+        weatherData.setMeasurements(80, 70, 29.2f);
+        weatherData.setMeasurements(78, 90, 29.2f);
 
 
     }

@@ -1,4 +1,4 @@
-class WeatherObserver implements Observer, DisplayElement {
+public class StatisticsDisplay implements Observer, DisplayElement {
     private float averageTemperature;
     private float minTemperature;
     private float maxTemperature;
@@ -11,7 +11,6 @@ class WeatherObserver implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println(
-                "Statistics - Avg: " + averageTemperature + ", Min: " + minTemperature + ", Max: " + maxTemperature);
+        System.out.println("Statistics - Avg: " + averageTemperature + ", Min: " + minTemperature + ", Max: " + maxTemperature);
     }
 }

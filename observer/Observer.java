@@ -1,4 +1,4 @@
 
 interface Observer {
-    void update(int temperature);
+    void update(float temp, float humidity, float pressure);
 }
